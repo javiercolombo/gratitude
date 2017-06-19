@@ -15,8 +15,10 @@
 
 	$('#btn_test').on('click', nextItem);
 
-	console.log('this');
+	console.log('this is trouble');
 	console.log('that');
+
+
 
 
 })();
