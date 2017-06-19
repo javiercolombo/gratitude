@@ -16,7 +16,7 @@
 	$('#btn_test').on('click', nextItem);
 
 	console.log('This should not be a problem');
-	console.log('hey');
+	console.log('heya');
 
 
 })();
