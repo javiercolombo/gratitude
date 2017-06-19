@@ -15,5 +15,8 @@
 
 	$('#btn_test').on('click', nextItem);
 
+	console.log('this');
+	console.log('that');
+
 
 })();
