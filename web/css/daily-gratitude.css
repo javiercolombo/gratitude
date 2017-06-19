@@ -1,0 +1,22 @@
+.main-container {
+	padding: 80px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+
+.gratitude-item-container {
+    position: absolute;
+    width: 80%;
+    top: 250px;
+}
+
+.gratitude-item h2 {
+	display: inline-block;
+}
+
+.gratitude-item textarea {
+	/*max-width: 400px;*/
+	max-width: 90%;
+	display: inline-block;
+}

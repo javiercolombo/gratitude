@@ -1,0 +1,242 @@
+/**
+* Fonts
+*/
+
+@import url("../fonts/fonts.css");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+
+/**
+* Intitutional
+*/
+
+html, body, .base-container {
+	height: 100%;
+}
+
+body {
+	/*color: #707C80;*/
+	color: #797b7b;
+}
+
+body, p, a {
+	/*font-family: 'Roboto-Light', helvetica, arial, sans-serif;*/
+	font-family: 'Roboto-Regular', helvetica, arial, sans-serif;
+	/*font-family: 'Slabo', sans-serif;*/
+}
+
+h1, h2 {
+	/*font-family: 'Roboto-Light', helvetica, arial, sans-serif;*/
+	font-family: 'Slabo', sans-serif;
+}
+
+h3, h4 {
+	/*font-family: 'Roboto-Medium', helvetica, arial, sans-serif;*/
+	font-family: 'Roboto-Regular', sans-serif;
+}
+
+h5, h6 {
+	/*font-family: 'Roboto-Bold', helvetica, arial, sans-serif;*/
+	font-family: 'Roboto-Regular', sans-serif;
+}
+
+
+/**
+* Colors
+*/
+
+.base-container {
+	/*background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);*/
+	background-color: #ffdc78;
+}
+
+.bg-orange {
+	background-color: #ffdc78;
+}
+
+.type-orange {
+	color: #ffdc78;
+}
+
+/**
+* Buttons
+*/
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.btn {
+
+    border: none;
+    font-size: 13px;
+    padding: 7px 15px;
+    border-radius: 2px;
+
+  -webkit-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -ms-transition: all .3s linear;
+  -kthtml-transition: all .3s linear;
+  transition: all .3s linear;
+
+}
+
+.btn:hover {
+   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);	
+}
+
+
+.btn-primary {
+	background-color: #3498db;
+}
+.btn-primary:hover {
+	background-color: #2980b9;	
+}
+
+.btn-success {
+	background-color: #1abc9c;
+}
+.btn-success:hover {
+	background-color: #16a085;
+}
+
+.btn-warning {
+	background-color: #f1c40f;
+}
+.btn-warning:hover {
+	background-color: #f39c12;
+}
+
+.btn-danger { 
+	background-color: #e74c3c;
+}
+.btn-danger:hover { 
+	background-color: #c0392b;
+}
+
+.btn-info {
+	background-color: #34495e;
+}
+
+.btn-info:hover {
+	background-color: #2c3e50;
+}
+
+/**
+* General
+*/
+
+.logo-container {
+	position: absolute;
+	left: 30px;
+    top: 15px;
+}
+.logo-container img {
+	height: 70px;
+}
+
+.box-shadow-md {
+   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.transition-all {
+  -webkit-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -ms-transition: all .3s linear;
+  -kthtml-transition: all .3s linear;
+  transition: all .3s linear;	
+}
+
+/**
+* Inputs
+*/
+
+.input-clean {
+  background: transparent;
+ -webkit-box-shadow: none;
+  box-shadow: none;
+  border-top: 0!important;
+  border-left: 0!important;
+  border-right: 0!important;
+  /*border-bottom: 2px solid #4285F4 !important;*/
+  outline: none;
+  border-radius: 0;
+  border-bottom: 2px solid #797b7b;	
+}
+.input-clean:focus {
+ -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+textarea {
+	resize: none;
+}
+
+/**
+* Widgets
+*/
+
+.widget-container {
+	padding-top: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.widget {
+	border-radius: 5px;
+	min-height: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.widget-header, 
+.widget-body {
+	background-color: white;
+}
+
+.widget-header {
+	padding: 10px 15px;
+	border-bottom: 1px solid #ccc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.widget-header h4 {
+	margin: 0;
+}
+
+.widget-body {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/** this along with transitions animates smoothly **/
+.widget.widget-website .widget-website-item:hover {
+	/*padding-left: 15px;*/
+}
+
+.widget.widget-website .widget-website-item .fa-chevron-right {
+	display: none;
+	margin-right: 5px;
+}
+.widget.widget-website .widget-website-item:hover .fa-chevron-right {
+	display: inline-block;
+}
+
+.widget.widget-website .widget-website-item p {
+	margin: 0;
+}
+.widget.widget-website a:hover {
+	text-decoration: none;
+	font-weight: 600;
+}
+.widget.widget-website a:not(:last-child) .widget-website-item {
+	border-bottom: 1px solid #ccc;
+}
+.widget.widget-website .widget-website-item {
+	padding: 9px 10px;
+}
+.widget.widget-website .widget-website-item:hover {
+	background-color: #f5f5f5;
+}

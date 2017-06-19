@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+
+	{{ parent() }}
+
+	<link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+{% block body %}
+
+	<div class="bg-orange" style="padding-left:50px;padding-top:50px">
+
+		<h1>h1: Hello, Mortal!</h1> 
+		<h2>h2: Hello, Mortal!</h2> 
+		<h3>h3: Hello, Mortal!</h3> 
+		<h4>h4: Hello, Mortal!</h4> 
+		<h5>h5: Hello, Mortal!</h5> 
+
+		<p>Paragraph</p>
+		<p>PARAGRAPH!</p>
+
+		<a href="">Anchor</a>
+	</br>
+		<label>Label</label>
+	</br>
+
+
+		<div class="btn btn-primary">PRIMARY</div>
+		<div class="btn btn-success">Success</div>
+		<div class="btn btn-warning">Warning!</div>
+		<div class="btn btn-danger">DANGER</div>
+		<div class="btn btn-info">Info..!</div>
+
+		<div style="width: 400px; margin-top: 15px">
+			<div class="btn btn-primary btn-block">BLOCK</div>
+		</div>
+
+	</div>
+
+
+{% endblock %}
