@@ -8,7 +8,43 @@
 .gratitude-item-container {
     position: absolute;
     width: 80%;
-    top: 250px;
+    top: 350px;
+}
+
+.gratitude-item {
+
+	margin-bottom: 50px;
+  opacity: 0;
+
+  -webkit-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -ms-transition: all .3s linear;
+  -kthtml-transition: all .3s linear;
+  transition: all .3s linear;
+
+}
+
+.gratitude-item i.favorite {
+  font-size: 13px;
+  margin-right: 15px;
+  cursor: pointer;
+ -webkit-transition: all .1s linear;
+  -o-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  -ms-transition: all .1s linear;
+  -kthtml-transition: all .1s linear;
+  transition: all .1s linear;
+}
+.gratitude-item i.favorite.fa-star {
+  /*color: gold;*/
+  color: #f1cc07;
+}
+.gratitude-item.active-item i.favorite {
+  font-size: 33px;
+}
+.gratitude-item.active-item i.favorite:hover {
+  font-size: 35px;
 }
 
 .gratitude-item h2 {
@@ -16,7 +52,57 @@
 }
 
 .gratitude-item textarea {
-	/*max-width: 400px;*/
 	max-width: 90%;
 	display: inline-block;
+  overflow: hidden;
+}
+.gratitude-item.active-item {
+  opacity: 1;
+}
+.gratitude-item.active-item h2 {
+  font-size: 60px;
+}
+.gratitude-item.active-item textarea {
+  font-size: 35px;
+}
+
+.gratitude-item.contig-item {
+	opacity: 0.4;
+}
+
+#btn_submit {
+  width: 200px;
+  margin-top: 50px;
+}
+
+/**
+* Completion bar
+*/
+
+.completion-bar-container {
+  position: absolute;
+  top: 35px;
+  left: 120px;
+}
+.completion-bar-container > i.fa-check {
+  float: right;
+  font-size: 25px;
+  margin-left: 15px;
+  color: #1abc9c;
+  display: none;
+}
+
+.completion-bar {
+  width: 350px;
+  height: 25px;
+  background-color: white;
+  border-radius: 15px;
+  float: left;
+}
+
+.completion-bar-slider {  
+  width: 0;
+  background-color: #1abc9c;
+  height: inherit;
+  border-radius: inherit;
 }
