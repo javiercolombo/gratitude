@@ -6,14 +6,37 @@
 
 	$container.find('.gratitude-item > i.favorite').tooltip();
 
-	var items = 5;
-	var data = [];
-	for(var i = 0; i < items; i++) {
-		data[i] = {
+	var idGratitude;
+	var items_count = 5;
+	var items = [];
+	for(var i = 0; i < items_count; i++) {
+		items[i] = {
  			_text: "",
  			_favorite: false
  		}
 	}
+
+	/**
+	* Fetch
+	*/
+
+	function fetch() {
+
+		//si no existe lo crea y devuelve id
+		$.post('daily-gratitude/init').done(function(rs) {
+
+			idGratitude = rs[0].id;
+			console.log(rs);
+
+			// var timestamp = rs[0].fechaDt.timestamp;
+			// console.log(moment(timestamp, 'X').format('YYYY-MM-DD'));
+
+		});
+
+	}
+
+	//on init, busco grat del día
+	fetch();
 
 
 	/**
@@ -23,8 +46,22 @@
 
 	function submit() {
 
+		if($(this).attr('disabled')) return;
+
 		console.log('submit');
-		console.log(data);
+
+		var data = {
+			idGratitude: idGratitude,
+			items: items
+		}
+
+		$.post('daily-gratitude/submit', { data: data }).done(function(rs) {
+			console.log(rs);
+
+	    	sessionStorage.setItem('submission_result', 'success');
+	    	window.location = '../';
+
+		});
 
 	}
 
@@ -41,7 +78,7 @@
 		$(this).animate({ 'height': '120%' }, 50); //weird bounce effect
 
 		var itemIndex = $(this).parent().index();
-		data[itemIndex]._favorite = !data[itemIndex]._favorite;
+		items[itemIndex]._favorite = !items[itemIndex]._favorite;
 
 	}
 
@@ -53,7 +90,7 @@
 
 	function onItemChange($elem) {
 
-		data[$elem.parent().index()]._text = $elem.val();
+		items[$elem.parent().index()]._text = $elem.val();
 		calculateCompletion();
 
 	}
@@ -62,16 +99,18 @@
 	function calculateCompletion() {
 
 		var done = 0;
-		for(var i = 0; i < items; i++) {
-			if(data[i]._text.length) done++;
+		for(var i = 0; i < items_count; i++) {
+			if(items[i]._text.length) done++;
 		}
 
 		var barWidth = $completionBar.css('width').replace('px', '') * 1;
-		var completion = (done / items) * 100;
+		var completion = (done / items_count) * 100;
 
 		$completionBar.find('.completion-bar-slider').animate({
 			'width': (completion + '%')
 		}, 50);
+
+		$('#btn_submit').attr('disabled', !(completion == 100));
 
 		if(completion == 100) { //all done
 
@@ -83,7 +122,9 @@
 			});
 
 		} else {
+
 			$('.completion-bar-container > .fa-check').hide();			
+
 		}
 
 	}
@@ -148,7 +189,7 @@
 			e.preventDefault();
 		}
 
-		if(data[$(this).parent().index()]._text != $(this).val()) {
+		if(items[$(this).parent().index()]._text != $(this).val()) {
 			//if text has changed, submit
 			onItemChange($(this));
 		}

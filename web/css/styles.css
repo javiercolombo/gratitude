@@ -266,3 +266,18 @@ textarea {
 .tooltip.left .tooltip-arrow {
   border-left-color: #1a415b;
 }
+
+/**
+* Notification
+*/
+
+div[data-notify="container"] {
+    border-radius: 3px;
+    font-size: 13px;
+    background-color: white;
+    border: none;
+    color: #797b7b;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	border-left: 5px solid gold;
+	max-width: 320px;
+}

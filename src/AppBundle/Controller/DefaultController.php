@@ -4,11 +4,54 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class DefaultController extends Controller
 {
 
+
+    private function getSerializer() {
+
+        $encoders    = array(new XmlEncoder(), new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer());
+
+        return new Serializer($normalizers, $encoders);
+
+    }
+
+    /**
+    * Response helpers
+    */
+
+    protected function success($data) {
+
+        $serializer = $this->getSerializer();
+
+        $response = new Response($serializer->serialize($data, 'json'));
+        $response->headers->set('Content-Type', 'application/json');
+        $response->setStatusCode(Response::HTTP_OK);
+
+        return $response;
+
+    }
+
+    protected function fail($errorMsg, $errorCode = 500) {
+
+        $response = new Response($errorMsg);
+        $response->headers->set('Content-type', 'application/json');
+        $response->setStatusCode($errorCode);
+
+        return $response;
+
+    }
 
 
     /**

@@ -12,6 +12,17 @@
 	height: 75px;
 }
 
+.daily-streak-container {
+	margin-top: 0;
+}
+.daily-streak-container span {
+	font-weight: 700;
+	/*color: #1abc9c;*/
+}
+
+.btn-daily-gratitude-container {
+	text-align: center;
+}
 
 .quote-container {
 	text-align: center;

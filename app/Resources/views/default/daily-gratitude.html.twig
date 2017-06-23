@@ -13,7 +13,9 @@
 	<div class="main-container">
 
 		<div class="logo-container">
-			<img src="/img/logo-white.png">
+			<a href=" {{ path('homepage') }} ">
+				<img src="/img/logo-white.png">
+			</a>
 		</div>
 
 
@@ -59,7 +61,7 @@
 				<textarea rows="1" class="form-control input-clean"></textarea>
 			</div>
 
-			<div id="btn_submit" class="btn btn-lg btn-success"><i class="fa fa-send-o"></i>&nbsp;&nbsp;SUBMIT!</div>
+			<div id="btn_submit" class="btn btn-lg btn-success" disabled><i class="fa fa-send-o"></i>&nbsp;&nbsp;SUBMIT!</div>
 
 		</div>
 
