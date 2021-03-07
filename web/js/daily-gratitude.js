@@ -25,7 +25,7 @@
 		//si no existe lo crea y devuelve id
 		$.post('daily-gratitude/init').done(function(rs) {
 
-			idGratitude = rs[0].id;
+			idGratitude = rs.grat_date_entity[0].id;
 			console.log(rs);
 
 			// var timestamp = rs[0].fechaDt.timestamp;

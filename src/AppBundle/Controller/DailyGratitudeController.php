@@ -48,7 +48,25 @@ class DailyGratitudeController extends DefaultController
 
 		$em->flush();
 
-		return $this->success($grat_date_entity);
+
+		/**
+		* quote
+		*/
+
+		/** @var Quote $QuoteRepo */
+		$quoteRepo = $em->getRepository('AppBundle:Quote');		
+
+		$lastQuote = $quoteRepo->findOneBy(array(), array('id' => 'DESC'), 1);
+
+		$maxId = $lastQuote->getId();
+
+		$idRandomQuote = rand(1, $maxId);
+		$quote = $quoteRepo->find($idRandomQuote);
+
+		return $this->success(array(
+			"grat_date_entity" => $grat_date_entity,
+			"quote" => $quote
+		));
 
 	}
 

@@ -13,8 +13,9 @@
 
 
 	//on init, ask for today's action
-	$.post('daily-gratitude/init').done(function(rs) {
-		if(rs[0].status > 0) {
+	$.post('daily-gratitude/init').done(({ grat_date_entity, quote }) => {
+		$('.quote-container > h2').text(quote.quoteString);
+		if(grat_date_entity[0].status > 0) {
 			//if done, hide action button and show message
 			$('.btn-daily-gratitude-container').hide();
 		}
